@@ -1,0 +1,19 @@
+[
+    {
+        "productName": "Purple Sea Urchin",
+        "availability": "January to July",
+        "productDescription": "<b>Purple Sea Urchin</b> <i>(Centrostephanus rodgersii)</i> also known as Long Spine Urchin are a native urchin that is found on the South East Coast of Australia and New Zealand. It has a bright yellow roe (or Uni) that has a rich creamy flavour. Purple Sea Urchin graze on Kelp and other macro algae from the low tide mark to a depth of about 30m. Purple urchin are acknowledged as a marine predator, and can dominate large areas of the rocky shoreline. Their harvest is considered extremely sustainable source of protein.",
+        "imageUrl": "seaurchin.webp"
+    },
+    {
+        "productName": "Red Sea Urchin",
+        "availability": "Red sea urchin is more difficult to harvest and is managed by a strict limited quota, but is available all year round.",
+        "productDescription": "<b>Red Sea Urchin</b> <i>(Heliocidaris tuberculate)</i> also known as Red Sea Urchin has shorter and thicker spines than the purple urchin. It has large bright yellow to orange roe, sometimes called tongues. The roe tends to have a rich nutty flavour with a creamy consistence, usually found in shallow waters up to about 10m.",
+        "imageUrl": "redseaurchin.webp"
+    },
+    {
+        "productName": "Turbo Shell",
+        "imageUrl": "turboshell.webp",
+        "availability": "Coming soon..."
+    }
+]
