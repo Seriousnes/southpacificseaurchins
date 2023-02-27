@@ -1,0 +1,24 @@
+﻿@using SouthPacificSeaUrchins.Models
+
+<div class="row">
+    <div class="col-lg-3 col-md-5 col-sm-12">
+        <img class="product-image me-3 ps-0" src="assets/images/products/@Model.ImageUrl" />
+    </div>
+    <div class="col-lg-9 col-md-7 col-sm-12">
+        <h3 class="pb-2">@Model.Name</h3>
+        <p class="justify-text">
+            @((MarkupString)Model.Description)
+        </p>
+        <div>
+            <p class="fw-bold text-uppercase mb-0">Availability</p>
+            <p class="mb-0">@Model.Availability</p>
+        </div>
+    </div>
+</div>
+
+
+
+@code {
+    [Parameter]
+    public ProductDetailsModel Model { get; set; }    
+}

@@ -1,3 +1,7 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
 # Logs
 logs
 *.log
@@ -13,6 +17,8 @@ dist
 dist-ssr
 coverage
 *.local
+/bin
+/obj
 
 /cypress/videos/
 /cypress/screenshots/

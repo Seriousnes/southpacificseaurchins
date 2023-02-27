@@ -1,0 +1,21 @@
+﻿<div>
+    <div class="pb-4">
+        <h1>@Header</h1>
+        <hr />
+        <p class="justify-text">@Blurb</p>
+        <div class="container px-0">
+            @Content
+        </div>
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public string Header { get; set; }
+
+    [Parameter]
+    public string Blurb { get; set; }
+    
+    [Parameter]
+    public RenderFragment Content { get; set; }
+}

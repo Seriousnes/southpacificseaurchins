@@ -1,0 +1,25 @@
+﻿@page "/"
+@page "/products"
+@using SouthPacificSeaUrchins.Models;
+@inject HttpClient _client
+
+<ContentLayout Header="Products">
+    <Content>
+        @foreach (var product in products)
+        {
+            <div class="py-3">
+                <Product Model="product" />
+            </div>
+        }
+    </Content>
+</ContentLayout>
+
+@code {
+    List<ProductDetailsModel> products = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        var request = await _client.GetFromJsonAsync<List<ProductDetailsModel>>("/data/products.json");
+        products.AddRange(request);
+    }
+}

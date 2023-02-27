@@ -1,0 +1,17 @@
+﻿.product-image {
+    /* border-radius: 50%; */
+    border-radius: 5px;
+    border-width: 2px;
+    border-color: black;
+    border-style: solid;
+    overflow: hidden;
+    height: 270px;
+    width: 270px;
+}
+
+img {
+    display: inline;
+    margin: 0 auto;
+    height: 100%;
+    width: auto;
+}
