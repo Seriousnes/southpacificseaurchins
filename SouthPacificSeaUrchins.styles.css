@@ -16,6 +16,11 @@ img[b-w55pgit4e4] {
     height: 100%;
     width: auto;
 }
+/* /Components/WeatherWidget.razor.rz.scp.css */
+.weather-widget[b-9iex8evgo6] {
+    font-weight: bold;
+    text-shadow: 1px 1px 2px black;
+}
 /* /Shared/MainLayout.razor.rz.scp.css */
 .page[b-ddz0j676rz] {
     position: relative;
