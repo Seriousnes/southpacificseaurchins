@@ -1,0 +1,100 @@
+/* /Components/Product.razor.rz.scp.css */
+.product-image[b-w55pgit4e4] {
+    /* border-radius: 50%; */
+    border-radius: 5px;
+    border-width: 2px;
+    border-color: black;
+    border-style: solid;
+    overflow: hidden;
+    height: 270px;
+    width: 270px;
+}
+
+img[b-w55pgit4e4] {
+    display: inline;
+    margin: 0 auto;
+    height: 100%;
+    width: auto;
+}
+/* /Shared/MainLayout.razor.rz.scp.css */
+.page[b-ddz0j676rz] {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+main[b-ddz0j676rz] {
+    flex: 1;
+}
+
+.sidebar[b-ddz0j676rz] {
+    background-image: linear-gradient(180deg, rgb(5, 39, 103) 0%, #3a0647 70%);
+}
+
+.top-row[b-ddz0j676rz] {
+    background-color: #f7f7f7;
+    border-bottom: 1px solid #d6d5d5;
+    justify-content: flex-end;
+    height: 3.5rem;
+    display: flex;
+    align-items: center;
+}
+
+    .top-row[b-ddz0j676rz]  a, .top-row[b-ddz0j676rz]  .btn-link {
+        white-space: nowrap;
+        margin-left: 1.5rem;
+        text-decoration: none;
+    }
+
+    .top-row[b-ddz0j676rz]  a:hover, .top-row[b-ddz0j676rz]  .btn-link:hover {
+        text-decoration: underline;
+    }
+
+    .top-row[b-ddz0j676rz]  a:first-child {
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+@media (max-width: 640.98px) {
+    .top-row:not(.auth)[b-ddz0j676rz] {
+        display: none;
+    }
+
+    .top-row.auth[b-ddz0j676rz] {
+        justify-content: space-between;
+    }
+
+    .top-row[b-ddz0j676rz]  a, .top-row[b-ddz0j676rz]  .btn-link {
+        margin-left: 0;
+    }
+}
+
+@media (min-width: 641px) {
+    .page[b-ddz0j676rz] {
+        flex-direction: row;
+    }
+
+    .sidebar[b-ddz0j676rz] {
+        width: 250px;
+        height: 100vh;
+        position: sticky;
+        top: 0;
+    }
+
+    .top-row[b-ddz0j676rz] {
+        position: sticky;
+        top: 0;
+        z-index: 1;
+    }
+
+    .top-row.auth[b-ddz0j676rz]  a:first-child {
+        flex: 1;
+        text-align: right;
+        width: 0;
+    }
+
+    .top-row[b-ddz0j676rz], article[b-ddz0j676rz] {
+        padding-left: 2rem !important;
+        padding-right: 1.5rem !important;
+    }
+}
