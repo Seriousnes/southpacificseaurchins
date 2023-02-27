@@ -1,0 +1,25 @@
+﻿@inject IWeatherService weatherService
+
+<div class="weather-widget fs-3 text-light font-weight-bold">
+    <div class="d-flex flex-column">
+        <div class="text-end">Sydney</div>
+        <div>@DisplayDate()</div>
+        <div class="text-end">@(weather?.CurrentWeather.Temperature) &deg;C</div>
+    </div>
+</div>
+
+@code {
+    WeatherResponse weather { get; set; }
+    System.Threading.Timer timer;    
+
+    protected override async Task OnInitializedAsync()
+    {   
+        timer = new System.Threading.Timer(async (object? stateInfo) =>
+        {
+            weather = await weatherService.GetWeatherAsync();
+            StateHasChanged();
+        }, new System.Threading.AutoResetEvent(false), 0, 300000);  // update every 5 minutes
+    }
+
+    string DisplayDate() => weather?.CurrentWeather.Time.ToString("ddd, MMM dd, yyyy");
+}
