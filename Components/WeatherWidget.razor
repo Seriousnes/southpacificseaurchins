@@ -4,14 +4,14 @@
     <div class="d-flex flex-column">
         <div class="text-end">Sydney</div>
         <div>@DisplayDate()</div>
-        <div class="text-end">@(weather?.CurrentWeather.Temperature) &deg;C</div>
+        <div class="text-end">@(weather?.Temperature) &deg;C</div>
     </div>
 </div>
 
 <MediaQuery Media="@Breakpoints.SmallDown" @bind-Matches="IsSmall"></MediaQuery>
 
 @code {
-    WeatherResponse weather { get; set; }
+    Current_Weather weather { get; set; }
     System.Threading.Timer timer;
     bool isSmall = false;
     private bool IsSmall
@@ -29,12 +29,14 @@
     {   
         timer = new System.Threading.Timer(async (object? stateInfo) =>
         {
-            weather = await weatherService.GetWeatherAsync();
+            var weatherResponse = await weatherService.GetWeatherAsync();
+            if (weatherResponse is { })
+                weather = weatherResponse.CurrentWeather;
             StateHasChanged();
         }, new System.Threading.AutoResetEvent(false), 0, 300000);  // update every 5 minutes
     }
 
-    string DisplayDate() => weather?.CurrentWeather.Time.ToString("ddd, MMM dd, yyyy");
+    string DisplayDate() => weather?.Time.ToString("d MMMM yyyy") ?? string.Empty;
 
     string TextClass()
     {
