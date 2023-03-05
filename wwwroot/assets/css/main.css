@@ -10772,12 +10772,21 @@ textarea.form-control-lg {
 }
 /*@import "../node_modules/bootstrap/scss/bootstrap";*/
 header {
-  height: 400px;
-  min-height: 50px;
-  background-image: url("../images/Background.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  object-fit: fill;
+  background-color: #FBF8E9;
+}
+@media (min-width: 576px) and (max-width: 767.98px) {
+  header {
+    height: auto;
+  }
+}
+@media (min-width: 768px) {
+  header {
+    height: 400px;
+    background-image: url("../images/Background.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    object-fit: fill;
+  }
 }
 
 .navbar {
@@ -10799,13 +10808,16 @@ ul.navbar-nav .nav-item {
   }
 }
 
-.logo {
-  background-image: url("../images/logo.svg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  object-fit: fill;
+@media (max-width: 575.98px) {
+  .hide-on-small {
+    display: none;
+  }
 }
-
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .show-on-small {
+    display: revert;
+  }
+}
 footer {
   position: fixed;
   bottom: 0;

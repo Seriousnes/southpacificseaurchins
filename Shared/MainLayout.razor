@@ -1,38 +1,44 @@
 ﻿@inherits LayoutComponentBase
 
-<header class="d-flex flex-column-reverse align-items-end">
-    <nav class="navbar navbar-expand-sm navbar-light bg-light p-2">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler"
-                aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="container-fluid">
-            <div class="collapse navbar-collapse" id="navbarToggler">
-                <a class="navbar-brand py-0" href="#">
-                    <div class="d-flex justify-content-center">
-                        <div class="d-flex flex-column">
-                            <img class="align-self-center" src="./assets/images/logo.svg" alt="" height="70">
+<MediaQueryList>
+    <header class="d-flex flex-column-reverse align-items-end">
+        <nav class="navbar navbar-expand-sm navbar-light bg-light p-2">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="container-fluid">
+                <div class="collapse navbar-collapse" id="navbarToggler">
+                    <a class="navbar-brand py-0 hide-on-small" href="#">
+                        <div class="d-flex justify-content-center">
+                            <div class="d-flex flex-column">
+                                <img class="align-self-center" src="./assets/images/logo.svg" alt="" style="height: 70px" />
+                            </div>
                         </div>
-                    </div>
-                </a>
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/products" id="productDropdownMenuLink">Products</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/about">About Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/contact">Contact</a>
-                    </li>
-                </ul>
+                    </a>
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/products" id="productDropdownMenuLink">Products</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/about">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/contact">Contact</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
+        </nav>
+        <div class="pe-3">
+            <WeatherWidget />
         </div>
-    </nav>
-    <div class="pe-3">
-        <WeatherWidget />
+        <MediaQuery Media="@Breakpoints.XSmallDown">
+            <Matched>
+                <img class="float-start" src="./assets/images/logo.svg" alt="" style="height: 70px; position: fixed; top: 0; left: 0;" />
+            </Matched>
+        </MediaQuery>
+    </header>
+    <div class="container py-3">
+        @Body
     </div>
-</header>
-<div class="container py-3">
-    @Body
-</div>
+</MediaQueryList>

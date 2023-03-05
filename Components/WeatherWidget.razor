@@ -1,6 +1,6 @@
 ﻿@inject IWeatherService weatherService
 
-<div class="weather-widget fs-3 text-light font-weight-bold">
+<div class="@TextClass()">
     <div class="d-flex flex-column">
         <div class="text-end">Sydney</div>
         <div>@DisplayDate()</div>
@@ -8,9 +8,22 @@
     </div>
 </div>
 
+<MediaQuery Media="@Breakpoints.SmallDown" @bind-Matches="IsSmall"></MediaQuery>
+
 @code {
     WeatherResponse weather { get; set; }
-    System.Threading.Timer timer;    
+    System.Threading.Timer timer;
+    bool isSmall = false;
+    private bool IsSmall
+    {
+        get => isSmall;
+        set
+        {
+            Console.WriteLine($"Getting {IsSmall} css class");
+            isSmall = value;
+            StateHasChanged();
+        }
+    }
 
     protected override async Task OnInitializedAsync()
     {   
@@ -22,4 +35,9 @@
     }
 
     string DisplayDate() => weather?.CurrentWeather.Time.ToString("ddd, MMM dd, yyyy");
+
+    string TextClass()
+    {
+        return $"weather-widget fs-3 font-weight-bold {(IsSmall ? "text-dark" : "text-light")}";
+    }
 }

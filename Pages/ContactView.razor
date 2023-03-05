@@ -2,43 +2,40 @@
 
 <ContentLayout Header="Contact">
     <Content>
-        <div class="d-flex flex-row">
-            <div class="d-flex flex-column w-50 fs-4">
-                <div class="ms-1">
-                    <h3>Damien Smith</h3>
+        <div class="row">
+            <div class="col-md-6 col-sm-12">
+                <div class="row">
+                    <div class="col-12">
+                        <h3>Damien Smith</h3>
+                    </div>
                 </div>
-                <div class="ms-1 mb-1">
-                    Phone:
-                    <a href="tel:0403291191">0403 291 191</a>
+                <div class="row mb-1">
+                    <div class="col-2 col-md-1">
+                        Phone:
+                    </div>
+                    <div class="col-10 col-md-11">
+                        <a href="tel:0403291191">0403 291 191</a>
+                    </div>
                 </div>
-                <div class="ms-1 mb-1">
-                    Email
-                    <a href="mailto:southpacificseaurchins@gmail.com" target="_blank">southpacificseaurchins@gmail.com</a>
+                <div class="row mb-1">
+                    <div class="col-2 col-md-1">
+                        Email:
+                    </div>
+                    <div class="col-10 col-md-11">
+                        <a href="mailto:southpacificseaurchins@gmail.com" target="_blank">southpacificseaurchins@gmail.com</a>
+                    </div>                    
                 </div>
-                <div class="mb-1">
-                    <a href="https://instagram.com/south_pacific_sea_urchins" class="social-icon instagram" target="_blank"></a>
+                <div class="row pt-2">
+                    <div class="col">
+                        <span class="text-decoration-underline">Social Media</span>
+                    </div>
                 </div>
-                <div class="mb-3"></div>
-                <div class="mb-3"></div>
-                <div class="mb-3"></div>
+                <div class="row mb-1">
+                    <div class="col" style="margin-left: -6px">
+                        <a href="https://instagram.com/south_pacific_sea_urchins" class="social-icon instagram" target="_blank"></a>
+                    </div>
+                </div>
             </div>
-            <!-- <div class="d-flex flex-column w-50">
-                <form>
-                    <div class="mb-3">
-                        <input type="text" class="form-control" id="nameInput" placeholder="Name *" v-model="model.name" :class="{ 'error' : v$.name.$error }">
-                    </div>
-                    <div class="mb-3">
-                        <input type="tel" class="form-control" id="phoneInput" placeholder="Contact number (optional)" v-model="model.phone">
-                    </div>
-                    <div class="mb-3">
-                        <input type="email" class="form-control" id="emailAddressInput" placeholder="Email *" v-model="model.emailAddress" :class="{ 'error' : v$.emailAddress.$error }">
-                    </div>
-                    <div class="mb-3">
-                        <textarea class="form-control" id="messageInput" placeholder="Message *" v-model="model.message" :class="{ 'error' : v$.message.$error }"></textarea>
-                    </div>
-                </form>
-                <button class="form-control btn btn-info" type="submit" @click="sendEmail">Send</button>
-            </div> -->
         </div>
     </Content>
 </ContentLayout>
