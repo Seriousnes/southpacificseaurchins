@@ -1,7 +1,7 @@
 ﻿@inherits LayoutComponentBase
 
 <MediaQueryList>
-    <header class="d-flex flex-column-reverse align-items-end">
+    <header class="d-flex flex-column-reverse @flexDirection">
         <nav class="navbar navbar-expand-sm navbar-light bg-light p-2">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -28,17 +28,25 @@
                     </ul>
                 </div>
             </div>
-        </nav>
-        <div class="pe-3">
-            <WeatherWidget />
-        </div>
-        <MediaQuery Media="@Breakpoints.XSmallDown">
-            <Matched>
-                <img class="float-start" src="./assets/images/logo.svg" alt="" style="height: 70px; position: fixed; top: 0; left: 0;" />
-            </Matched>
-        </MediaQuery>
+        </nav>        
+        <div class="d-flex flex-row justify-content-between align-items-center">
+            <MediaQuery Media="@Breakpoints.XSmallDown" @bind-Matches="isSmall">
+                <Matched>
+                    <img class="float-start" src="./assets/images/logo.svg" alt="" style="height: 70px" />
+                </Matched>
+            </MediaQuery>
+            <div class="pe-3">
+                <WeatherWidget />
+            </div>
+        </div>        
     </header>
     <div class="container py-3">
         @Body
     </div>
 </MediaQueryList>
+
+@code {
+    bool isSmall = false;
+
+    string flexDirection => isSmall ? "align-items-stretch" : "align-items-end";
+}

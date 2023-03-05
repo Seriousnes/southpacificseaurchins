@@ -1,7 +1,7 @@
 ﻿@inject IWeatherService weatherService
 
-<div class="@TextClass()">
-    <div class="d-flex flex-column">
+<div class="weather-widget @TextClass()">
+    <div class="d-flex flex-column align-items-end">
         <div class="text-end">Sydney</div>
         <div>@DisplayDate()</div>
         <div class="text-end">@(weather?.Temperature) &deg;C</div>
@@ -40,6 +40,6 @@
 
     string TextClass()
     {
-        return $"weather-widget fs-3 font-weight-bold {(IsSmall ? "text-dark" : "text-light")}";
+        return isSmall ? "text-dark fs-5 f" : "fs-3 font-weight-bold text-light";
     }
 }
