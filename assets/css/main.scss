@@ -9,16 +9,23 @@ $light: #FBF8E9;
 
 // Cusotmizations
 header {
-  height: 400px;
-  min-height: 50px;
-  background-image: url("../images/Background.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  object-fit: fill;
+    background-color: $light;
+
+    @include media-breakpoint-only(sm) {
+        height: auto;        
+    }
+
+    @include media-breakpoint-up(md) {
+        height: 400px;
+        background-image: url("../images/Background.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        object-fit: fill;
+    }
 }
 
 .navbar {
-  width: 100%;
+  width: 100%;  
 }
 
 .navbar-brand {
@@ -37,11 +44,16 @@ ul.navbar-nav .nav-item {
   }
 }
 
-.logo {
-  background-image: url("../images/logo.svg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  object-fit: fill;
+@include media-breakpoint-down(sm) {
+    .hide-on-small {
+        display: none;
+    }
+}
+
+@include media-breakpoint-only(sm) {
+    .show-on-small {
+        display: revert;
+    }
 }
 
 footer {
