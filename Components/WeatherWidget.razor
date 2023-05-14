@@ -19,21 +19,23 @@
         get => isSmall;
         set
         {
-            Console.WriteLine($"Getting {IsSmall} css class");
             isSmall = value;
             StateHasChanged();
         }
     }
 
     protected override async Task OnInitializedAsync()
-    {   
-        timer = new System.Threading.Timer(async (object? stateInfo) =>
+    {
+        timer = await Task.Factory.StartNew(() =>
         {
-            var weatherResponse = await weatherService.GetWeatherAsync();
-            if (weatherResponse is { })
-                weather = weatherResponse.CurrentWeather;
-            StateHasChanged();
-        }, new System.Threading.AutoResetEvent(false), 0, 300000);  // update every 5 minutes
+            return new System.Threading.Timer(async (object? stateInfo) =>
+            {
+                var weatherResponse = await weatherService.GetWeatherAsync();
+                if (weatherResponse is { })
+                    weather = weatherResponse.CurrentWeather;
+                StateHasChanged();
+            }, new System.Threading.AutoResetEvent(false), 0, 300000);  // update every 5 minutes
+        });
     }
 
     string DisplayDate() => weather?.Time.ToString("d MMMM yyyy") ?? string.Empty;
